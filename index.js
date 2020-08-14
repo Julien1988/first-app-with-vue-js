@@ -1,35 +1,19 @@
-import Vue from '/node_modules/vue/dist/vue';
+import Vue from "/node_modules/vue/dist/vue";
 
 const app = new Vue({
-    el: '#app',
-    data: {
-        message: "Mon application VueJS",
-        shoppingCart: [{
-                label: 'Pommes',
-                cost: 6,
-                url: "#"
-            },
-            {
-                label: 'Bananes',
-                cost: 2,
-                url: "#"
-            },
-            {
-                label: 'Noix de coco',
-                cost: 8,
-                url: "#"
-            }
-        ]
+  el: "#app",
+  data: {
+    message: "Mon application VueJS",
+    favoritColor: "bleu",
+  },
+  methods: {
+    showColor() {
+      alert(this.favoritColor);
     },
-    computed: {
-        totalPrice() {
-            let total = 0;
-            this.shoppingCart.forEach(element => {
-                total += element.cost
-            });
-            return total
-        }
-    }
-})
+    changeColor() {
+      this.favoritColor = document.querySelector("#change-color").value;
+    },
+  },
+});
 
-console.log("coucou")
+console.log("coucou");

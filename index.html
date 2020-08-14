@@ -8,14 +8,10 @@
   <body>
     <div id="app">
       <h1>{{message}}</h1>
-      <ul>
-        <li v-for="item in shoppingCart">
-          <a v-bind:href="item.url">
-            Prix d'une {{item.label}}: {{item.cost}} €
-          </a>
-        </li>
-      </ul>
+      <label for="change-color">Changer la couleur: </label>
+      <input id="change-color" type="text" @keyup.enter="changeColor" />
       <p>Total: {{totalPrice}} €</p>
+      <button v-on:click="showColor">Cliquer ici !</button>
     </div>
 
     <script src="./index.js"></script>
