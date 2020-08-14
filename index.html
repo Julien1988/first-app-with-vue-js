@@ -7,10 +7,13 @@
   </head>
   <body>
     <div id="app">
+      <h1>{{message}}</h1>
       <ul>
-        <li>Prix d'une pomme: {{costOfApple}} €</li>
-        <li>Prix d'une tomate: {{costOfTomatos}} €</li>
-        <li>Prix d'une banane: {{costOfBanana}} €</li>
+        <li v-for="item in shoppingCart">
+          <a v-bind:href="item.url">
+            Prix d'une {{item.label}}: {{item.cost}} €
+          </a>
+        </li>
       </ul>
       <p>Total: {{totalPrice}} €</p>
     </div>
